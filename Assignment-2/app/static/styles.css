@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400&display=swap');
+
+/* General body styles */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f9f9f9;
+    font-family: 'Overpass Mono', monospace;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Flex container to hold both the image section and the form */
+.flex-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 1900px;
+    width: 100%;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+/* Image section styles */
+.image-section {
+    margin-left: 285px;
+    text-align: center;
+    max-width: 450px;
+    padding: 0 20px;
+}
+
+/* Create an account container styles */
+.container {
+    margin-left: auto;
+    position: relative;
+    width: 573px;
+    height: 792px;
+    background-color: rgba(252, 252, 252, 0.95);
+    padding: 90px 40px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Form section styles */
+.form-section h1 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: #6660a0;
+    font-weight: 600;
+}
+
+/* Google button styles */
+.form-section .btn-outline-primary {
+    background-color: white;
+    color: #4a4a4a;
+    border: 1px solid #d3d3d3;
+    padding: 10px;
+    width: 100%;
+    border-radius: 6px;
+    font-family: 'Cabin', sans-serif;
+}
+
+/* Google icon styles */
+.google-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+/* Form paragraph (Or) styles */
+.form-section p {
+    color: #a8a8a8;
+    margin: 25px 0;
+    position: relative;
+    padding: 0 10px;
+    background-color: #fcfcfc;
+}
+
+/* Line under "Or" text */
+.form-section p::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #e0e0e0;
+    z-index: -1;
+}
+
+/* Form input fields */
+.form-section input {
+    padding: 23px 15px;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #d3d3d3;
+    margin-bottom: 15px;
+}
+
+/* User role selection styles */
+.role-select {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    border: 1px solid #d3d3d3;
+    border-radius: 40px;
+    margin: 20px 0;
+    margin-bottom: 30px;
+    height: 45px;
+    overflow: hidden;
+}
+
+/* Labels for user role selection */
+.role-select label {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    border-radius: 40px;
+    cursor: pointer;
+    color: #6a6a6a;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* Hide radio buttons for role selection */
+.role-select input[type="radio"] {
+    display: none;
+}
+
+/* Style for selected role (checked radio) */
+.role-select input[type="radio"]:checked + label {
+    background-color: #e0d4f3;
+    color: #4a4a4a;
+    border-radius: 40px;
+    border: 1px solid #d3d3d3;
+}
+
+/* Remember me checkbox styles */
+.form-section .remember-me {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    margin: 20px 0;
+    margin-bottom: 25px;
+}
+
+/* Styles for the remember me checkbox */
+.form-section .remember-me input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+}
+
+/* Styles for remember me label */
+.form-section .remember-me label {
+    margin: 0;
+    font-size: 1rem;
+    color: #6a6a6a;
+    white-space: nowrap;
+}
+
+/* Submit button styles */
+.form-section .btn-primary {
+    background-color: #6660a0;
+    border: none;
+    width: 100%;
+    padding: 12px;
+    color: white;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Submit button hover effect */
+.form-section .btn-primary:hover {
+    background-color: #453ba3ee;
+}
+
+/* Link styles in the form */
+.form-section a {
+    color: #fcac37;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Hover effect for links */
+.form-section a:hover {
+    text-decoration: underline;
+}
+
+/* Box for the title and subheading */
+.title-box {
+    padding: 10px;
+    width: 450px;
+    border-radius: 12px;
+}
+
+/* Title (Welcome) styling */
+.title-box h1 {
+    font-size: 2rem;
+    color: #3F3D56;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Subheading (Simplifying Rentals) styling */
+.title-box .subheading {
+    color: #FCAC37;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Box for the image grid */
+.image-grid-box {
+    width: 450px;
+    padding: 20px;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Grid layout for images */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    row-gap: 20px;
+    column-gap: 25px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Gradient above the bottom rectangle */
+.image-grid-box::before {
+    content: '';
+    position: absolute;
+    bottom: 75px;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to bottom, rgba(249, 249, 249, 0) 0%, rgba(249, 249, 249, 1) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Solid bottom rectangle */
+.image-grid-box::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 75px;
+    background-color: #f9f9f9;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Image styles inside the grid */
+.image-grid img {
+    width: 100%;
+    border-radius: 6px;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+}
+
+/* Adjust position for specific images (Image 4 and 7) */
+.image-grid img:nth-child(4),
+.image-grid img:nth-child(7) {
+    top: -50px;
+}
+
+/* Adjust position for specific image (Image 8) */
+.image-grid img:nth-child(8) {
+    top: -10px;
+}

@@ -3,16 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Input Form</title>
+    <title>RentEase - Register</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Enter something:</h1>
-    <form method="POST">
-        <input type="text" name="user_input" required>
-        <button type="submit">Submit</button>
-    </form>
-    {% if user_input %}
-        <h2>You entered: {{ user_input }}</h2>
-    {% endif %}
+    <!-- Flexbox container to hold both the image section and the form -->
+    <div class="flex-container">
+        
+        <!-- Image section for the left side -->
+        <div class="image-section">
+            
+            <!-- Title and subheading box -->
+            <div class="title-box">
+                <h1>Welcome to RentEase.</h1>
+                <p class="subheading">Simplifying Rentals, Elevating Experiences.</p>
+            </div>
+            
+            <!-- Image grid box -->
+            <div class="image-grid-box">
+                <div class="image-grid">
+                    <img src="{{ url_for('static', filename='img/image1.png') }}" alt="House 1">
+                    <img src="{{ url_for('static', filename='img/image2.png') }}" alt="House 2">
+                    <img src="{{ url_for('static', filename='img/image3.png') }}" alt="House 3">
+                    <img src="{{ url_for('static', filename='img/image4.png') }}" alt="House 4">
+                    <img src="{{ url_for('static', filename='img/image5.png') }}" alt="House 5">
+                    <img src="{{ url_for('static', filename='img/image6.png') }}" alt="House 6">
+                    <img src="{{ url_for('static', filename='img/image7.png') }}" alt="House 7">
+                    <img src="{{ url_for('static', filename='img/image8.png') }}" alt="House 8">
+                    <img src="{{ url_for('static', filename='img/image9.png') }}" alt="House 9">
+                </div>
+            </div>
+        </div>
+
+        <!-- Registration form section on the right -->
+        <div class="container">
+            <div class="form-section">
+                <h1>Register for free</h1>
+                <form method="POST">
+                    <!-- Google OAuth button -->
+                    <div class="mb-3">
+                        <button class="btn btn-outline-primary">
+                            <img src="{{ url_for('static', filename='img/google_icon.png') }}" alt="Google" class="google-icon">
+                            Continue With Google
+                        </button>
+                    </div>
+                    <p><span>Or</span></p>
+                    <!-- Form Inputs -->
+                    <div class="mb-3">
+                        <input type="text" name="username" class="form-control" placeholder="Username" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" name="password" class="form-control" placeholder="Password" required>
+                    </div>
+                    <div class="role-select">
+                        <input type="radio" id="tenant" name="user_type" value="Tenant" required>
+                        <label for="tenant">Tenant</label>
+                        <input type="radio" id="landlord" name="user_type" value="Landlord" required>
+                        <label for="landlord">Landlord</label>
+                    </div>
+                    <div class="remember-me">
+                        <input type="checkbox" name="remember_me"> Remember Me
+                    </div>
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </form>
+                <p class="mt-3">Already have an account? <a href="#">Log in</a></p>
+            </div>
+        </div>
+
+    </div>
 </body>
 </html>
