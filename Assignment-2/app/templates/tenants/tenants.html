@@ -6,7 +6,7 @@
     <title>RentEase</title>
     <!-- Linking external fonts and the CSS file for styling -->
     <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
-    <link href="C:\Users\nicholas\Desktop\Cisc327-F24-Group17-SI\Assignment-2\app\static\css\tenants.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tenants.css') }}">
 </head>
 <body>
 
@@ -14,24 +14,28 @@
     <div class="sidebar">
         <div class="logo-container">
             <!-- Logo for RentEase application -->
-            <img src="C:\Users\nicholas\Desktop\Cisc327-F24-Group17-SI\Assignment-2\app\static\img\tenant_img\logo.png" alt="Building Icon" class="logo-icon">
+            <img src="{{ url_for('static', filename='img/tenant_img/logo.png') }}" alt="Building Icon" class="logo-icon">
             <span class="logo-text">RentEase</span>
         </div>
         <!-- Navigation menu links -->
         <ul class="nav-menu">
-            <li><img src="C:\Users\nicholas\Desktop\Cisc327-F24-Group17-SI\Assignment-2\app\static\img\tenant_img\dashboard.png" alt="Dashboard Icon">Dashboard</li>
-            <li><img src="C:\Users\nicholas\Desktop\Cisc327-F24-Group17-SI\Assignment-2\app\static\img\tenant_img\properties.png" alt="Properties Icon">Properties</li>
-            <li><img src="C:\Users\nicholas\Desktop\Cisc327-F24-Group17-SI\Assignment-2\app\static\img\tenant_img\tenants.png" alt="Tenants Icon">Tenants</li>
-            <li><img src="C:\Users\nicholas\Desktop\Cisc327-F24-Group17-SI\Assignment-2\app\static\img\tenant_img\lease.png" alt="Lease Icon">Lease Agreements</li>
-            <li><img src="C:\Users\nicholas\Desktop\Cisc327-F24-Group17-SI\Assignment-2\app\static\img\tenant_img\payments.png" alt="Payments Icon">Payments & Invoices</li>
-            <li><img src="C:\Users\nicholas\Desktop\Cisc327-F24-Group17-SI\Assignment-2\app\static\img\tenant_img\maintenance.png" alt="Maintenance Icon">Maintenance Requests</li>
-            <li><img src="C:\Users\nicholas\Desktop\Cisc327-F24-Group17-SI\Assignment-2\app\static\img\tenant_img\fin_reports.png" alt="Financial Reports Icon">Financial Reports</li>
-            <li><img src="C:\Users\nicholas\Desktop\Cisc327-F24-Group17-SI\Assignment-2\app\static\img\tenant_img\applications.png" alt="Applications Icon">Tenant Applications</li>
-            <li><img src="C:\Users\nicholas\Desktop\Cisc327-F24-Group17-SI\Assignment-2\app\static\img\tenant_img\vacancies.png" alt="Vacancies Icon">Vacancies</li>
-            <li><img src="C:\Users\nicholas\Desktop\Cisc327-F24-Group17-SI\Assignment-2\app\static\img\tenant_img\feedback.png" alt="Feedback Icon">Feedback & Reviews</li>
-            <li><img src="C:\Users\nicholas\Desktop\Cisc327-F24-Group17-SI\Assignment-2\app\static\img\tenant_img\messages.png" alt="Messages Icon">Messages</li>
-            <li><img src="C:\Users\nicholas\Desktop\Cisc327-F24-Group17-SI\Assignment-2\app\static\img\tenant_img\settings.png" alt="Settings Icon">Settings</li>
-            <li><img src="C:\Users\nicholas\Desktop\Cisc327-F24-Group17-SI\Assignment-2\app\static\img\tenant_img\logout.png" alt="Logout Icon">Logout</li>
+            <li><img src="{{ url_for('static', filename='img/tenant_img/dashboard.png') }}" alt="Dashboard Icon">Dashboard</li>
+            <li><img src="{{ url_for('static', filename='img/tenant_img/properties.png') }}" alt="Properties Icon">Properties</li>
+            <li><img src="{{ url_for('static', filename='img/tenant_img/tenants.png') }}" alt="Tenants Icon">Tenants</li>
+            <li><img src="{{ url_for('static', filename='img/tenant_img/lease.png') }}" alt="Lease Icon">Lease Agreements</li>
+            <li><img src="{{ url_for('static', filename='img/tenant_img/payments.png') }}" alt="Payments Icon">Payments & Invoices</li>
+            <li><img src="{{ url_for('static', filename='img/tenant_img/maintenance.png') }}" alt="Maintenance Icon">Maintenance Req</li>
+            <li><img src="{{ url_for('static', filename='img/tenant_img/fin_reports.png') }}" alt="Financial Reports Icon">Financial Reports</li>
+            <li><img src="{{ url_for('static', filename='img/tenant_img/applications.png') }}" alt="Applications Icon">Tenant Applications</li>
+            <li><img src="{{ url_for('static', filename='img/tenant_img/vacancies.png') }}" alt="Vacancies Icon">Vacancies</li>
+            <li><img src="{{ url_for('static', filename='img/tenant_img/feedback.png') }}" alt="Feedback Icon">Feedback & Reviews</li>
+            <li><img src="{{ url_for('static', filename='img/tenant_img/messages.png') }}" alt="Messages Icon">Messages</li>
+            <li><img src="{{ url_for('static', filename='img/tenant_img/settings.png') }}" alt="Settings Icon">Settings</li>
+            <li>
+                <a href="{{ url_for('login') }}" style="text-decoration: none; color: inherit;">
+                    <img src="{{ url_for('static', filename='img/tenant_img/logout.png') }}" alt="Logout Icon"> Logout
+                </a>
+            </li>
         </ul>
     </div>
 
@@ -43,10 +47,10 @@
         
             <!-- Add a container for the profile and notifications -->
             <div class="user-info-container">
-                <img src="C:\Users\nicholas\Desktop\Cisc327-F24-Group17-SI\Assignment-2\app\static\img\tenant_img\notifications.png" alt="Notifications" class="notification-icon">
+                <img src="{{ url_for('static', filename='img/tenant_img/notifications.png') }}" alt="Notifications" class="notification-icon">
                 
                 <div class="user-profile">
-                    <img src="C:\Users\nicholas\Desktop\Cisc327-F24-Group17-SI\Assignment-2\app\static\img\tenant_img\profile.png" alt="Profile Picture" class="profile-pic">
+                    <img src="{{ url_for('static', filename='img/tenant_img/profile.png') }}" alt="Profile Picture" class="profile-pic">
                     <span class="username">Username</span>
                 </div>
             </div>
@@ -124,6 +128,6 @@
     </div>
 
     <!-- Linking the JavaScript functionality for dropdowns -->
-    <script src="C:\Users\nicholas\Desktop\Cisc327-F24-Group17-SI\Assignment-2\app\static\js\tenants.js"></script>
+    <script src="{{ url_for('static', filename='js/tenants.js') }}"></script>
 </body>
 </html>

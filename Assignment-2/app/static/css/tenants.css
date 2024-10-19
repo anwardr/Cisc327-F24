@@ -322,3 +322,18 @@ body {
   background-color: #f1f1f1;
   color: #F7931E;
 }
+
+.nav-menu li a {
+  display: flex;              /* Makes the content inside the link a flex container */
+  align-items: center;        /* Vertically centers the text and icon */
+  padding: 10px 0;            /* Ensures consistent padding */
+}
+
+.nav-menu li img {
+  margin-right: 10px;         /* Adjust space between icon and text */
+}
+
+.nav-menu li {
+  text-align: center;         /* Ensures text stays centered horizontally */
+}
+
