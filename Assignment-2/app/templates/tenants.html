@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentEase</title>
+    <!-- Linking external fonts and the CSS file for styling -->
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
+    <link href="C:\Users\nicholas\Desktop\Cisc327-F24-Group17-SI\Assignment-2\app\static\css\tenants.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Sidebar for navigation links -->
+    <div class="sidebar">
+        <div class="logo-container">
+            <!-- Logo for RentEase application -->
+            <img src="C:\Users\nicholas\Desktop\Cisc327-F24-Group17-SI\Assignment-2\app\static\img\tenant_img\logo.png" alt="Building Icon" class="logo-icon">
+            <span class="logo-text">RentEase</span>
+        </div>
+        <!-- Navigation menu links -->
+        <ul class="nav-menu">
+            <li><img src="C:\Users\nicholas\Desktop\Cisc327-F24-Group17-SI\Assignment-2\app\static\img\tenant_img\dashboard.png" alt="Dashboard Icon">Dashboard</li>
+            <li><img src="C:\Users\nicholas\Desktop\Cisc327-F24-Group17-SI\Assignment-2\app\static\img\tenant_img\properties.png" alt="Properties Icon">Properties</li>
+            <li><img src="C:\Users\nicholas\Desktop\Cisc327-F24-Group17-SI\Assignment-2\app\static\img\tenant_img\tenants.png" alt="Tenants Icon">Tenants</li>
+            <li><img src="C:\Users\nicholas\Desktop\Cisc327-F24-Group17-SI\Assignment-2\app\static\img\tenant_img\lease.png" alt="Lease Icon">Lease Agreements</li>
+            <li><img src="C:\Users\nicholas\Desktop\Cisc327-F24-Group17-SI\Assignment-2\app\static\img\tenant_img\payments.png" alt="Payments Icon">Payments & Invoices</li>
+            <li><img src="C:\Users\nicholas\Desktop\Cisc327-F24-Group17-SI\Assignment-2\app\static\img\tenant_img\maintenance.png" alt="Maintenance Icon">Maintenance Requests</li>
+            <li><img src="C:\Users\nicholas\Desktop\Cisc327-F24-Group17-SI\Assignment-2\app\static\img\tenant_img\fin_reports.png" alt="Financial Reports Icon">Financial Reports</li>
+            <li><img src="C:\Users\nicholas\Desktop\Cisc327-F24-Group17-SI\Assignment-2\app\static\img\tenant_img\applications.png" alt="Applications Icon">Tenant Applications</li>
+            <li><img src="C:\Users\nicholas\Desktop\Cisc327-F24-Group17-SI\Assignment-2\app\static\img\tenant_img\vacancies.png" alt="Vacancies Icon">Vacancies</li>
+            <li><img src="C:\Users\nicholas\Desktop\Cisc327-F24-Group17-SI\Assignment-2\app\static\img\tenant_img\feedback.png" alt="Feedback Icon">Feedback & Reviews</li>
+            <li><img src="C:\Users\nicholas\Desktop\Cisc327-F24-Group17-SI\Assignment-2\app\static\img\tenant_img\messages.png" alt="Messages Icon">Messages</li>
+            <li><img src="C:\Users\nicholas\Desktop\Cisc327-F24-Group17-SI\Assignment-2\app\static\img\tenant_img\settings.png" alt="Settings Icon">Settings</li>
+            <li><img src="C:\Users\nicholas\Desktop\Cisc327-F24-Group17-SI\Assignment-2\app\static\img\tenant_img\logout.png" alt="Logout Icon">Logout</li>
+        </ul>
+    </div>
+
+    <!-- Main content area -->
+    <div class="main-content">
+        <div class="header-content">
+            <h1 class="page-title">Tenants</h1>
+            <p class="subtext">Showing tenants for user_00.</p>
+        
+            <!-- Add a container for the profile and notifications -->
+            <div class="user-info-container">
+                <img src="C:\Users\nicholas\Desktop\Cisc327-F24-Group17-SI\Assignment-2\app\static\img\tenant_img\notifications.png" alt="Notifications" class="notification-icon">
+                
+                <div class="user-profile">
+                    <img src="C:\Users\nicholas\Desktop\Cisc327-F24-Group17-SI\Assignment-2\app\static\img\tenant_img\profile.png" alt="Profile Picture" class="profile-pic">
+                    <span class="username">Username</span>
+                </div>
+            </div>
+            
+            <!-- Container for search bar and add button -->
+            <div class="header-actions">
+                <button class="add-tenant-button">Add New Tenant</button>
+                <div class="search-bar-container">
+                    <input type="text" class="search-bar" placeholder="Search...">
+                </div>
+            </div>
+        </div>
+
+        <!-- Table displaying tenant details -->
+        <table class="tenants-table">
+            <thead>
+                <tr>
+                    <th><span>Name</span></th>
+                    <th><span>Property</span></th>
+                    <th><span>Last Contacted</span></th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Example row 1 -->
+                <tr>
+                    <td>John Doe</td>
+                    <td>Property A</td>
+                    <td>October 1, 2024</td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="dropdown-toggle">...</button>
+                            <div class="dropdown-menu">
+                                <a href="#">View Profile</a>
+                                <a href="#">Send Message</a>
+                                <a href="#">Message History</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <!-- Example row 2 -->
+                <tr>
+                    <td>Jane Doe</td>
+                    <td>Property B</td>
+                    <td>September 1, 2024</td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="dropdown-toggle">...</button>
+                            <div class="dropdown-menu">
+                                <a href="#">View Profile</a>
+                                <a href="#">Send Message</a>
+                                <a href="#">Message History</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <!-- Example row 3 -->
+                <tr>
+                    <td>Jean Doe</td>
+                    <td>Property C</td>
+                    <td>August 1, 2024</td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="dropdown-toggle">...</button>
+                            <div class="dropdown-menu">
+                                <a href="#">View Profile</a>
+                                <a href="#">Send Message</a>
+                                <a href="#">Message History</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>        
+    </div>
+
+    <!-- Linking the JavaScript functionality for dropdowns -->
+    <script src="C:\Users\nicholas\Desktop\Cisc327-F24-Group17-SI\Assignment-2\app\static\js\dropdown.js"></script>
+</body>
+</html>

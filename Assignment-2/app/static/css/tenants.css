@@ -1,0 +1,324 @@
+/* General reset to normalize default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling: Sets the font family and background color for the body */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* Sidebar styling: Defines the width, background color, and position of the sidebar */
+.sidebar {
+  width: 250px;
+  background: #3F3D56;
+  position: fixed;
+  height: 100%;
+  padding: 20px;
+  color: white;
+}
+
+/* Sidebar menu with icons: Styles the list items and images in the sidebar */
+.sidebar .nav-menu li {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  color: #fff;
+  font-size: 16px;
+  transition: padding-left 0.3s;
+}
+
+.sidebar .nav-menu li img {
+  width: 24px;
+  height: 24px;
+  margin-right: 15px;
+}
+
+/* Sidebar hover effect: Adds a background color and padding shift when hovering over menu items */
+.sidebar .nav-menu li:hover {
+  background-color: #575363;
+  padding-left: 10px;
+}
+
+/* Sidebar logo styling: Defines the logo area and its elements in the sidebar */
+.logo-container {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #3F3D56;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-size: 24px;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Main content area: Adjusts the position and padding of the main content to accommodate the sidebar */
+.main-content {
+  margin-left: 250px;
+  padding: 20px;
+}
+
+/* User Info Container: Aligns profile picture, username, and notification bell in the top-right corner */
+.user-info-container {
+  position: absolute; /* Position it absolutely relative to the closest positioned parent */
+  top: 5px; /* Align it with the title */
+  right: 50px; /* Align to the right side of the screen */
+  display: flex;
+  align-items: center; /* Vertically align the elements */
+  gap: 10px; /* Space between notification bell, profile picture, and username */
+  z-index: 100; /* Ensure it stays above other elements */
+}
+
+/* Notification Bell Icon Styling: Size and cursor style for the bell icon */
+.notification-icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: block; /* Ensures bell takes up its own space */
+}
+
+/* User Profile Container: Defines the flexbox layout for the profile picture and username */
+.user-profile {
+  display: flex;
+  align-items: center; /* Vertically aligns the profile picture and username */
+  gap: 10px; /* Space between profile picture and username */
+}
+
+/* User Profile Picture: Size, margin, and border for the profile picture */
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  margin-right: 5px;
+  border-radius: 50%;
+  border: 1px solid #3F3D56;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* Username Styling: Defines the appearance of the username text */
+.username {
+  font-size: 16px;
+  font-weight: 500;
+  color: #3F3D56;
+  display: flex;
+  align-items: center;
+}
+
+/* Add a circle around the profile icon: Adds padding and a border around the profile image */
+.user-info-container .profile-pic {
+  border: 1px solid #3F3D56;
+  padding: 3px;
+}
+
+/* Header content layout: General positioning of the header elements */
+.header-content {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+/* Page title styling: Sets the font size, color, and margins for the main page title */
+.page-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #3F3D56;
+  margin-left: 40px;
+  margin-bottom: 10px;
+}
+
+/* Subtext styling: Sets the appearance and position of the subtext under the title */
+.subtext {
+  font-size: 18px;
+  color: #3F3D56;
+  margin-bottom: 25px;
+  margin-left: 50px;
+  width: 94%;
+}
+
+/* Header actions container: Aligns the 'Add New Tenant' button and search bar */
+.header-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 65px;
+  margin-bottom: 20px;
+}
+
+/* Add New Tenant button styling: Defines the appearance and hover effect of the button */
+.add-tenant-button {
+  padding: 10px 20px;
+  margin-left: -20px;
+  margin-bottom: -10px;
+  background-color: #3F3D56;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-tenant-button:hover {
+  background-color: #575363;
+}
+
+/* Search bar styling: Appearance and layout for the search input field */
+.search-bar-container {
+  margin-right: 15px;
+  margin-bottom: -10px;
+}
+
+.search-bar {
+  width: 350px;
+  padding: 8px 15px;
+  margin-right: 27px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  font-size: 14px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.search-bar:focus {
+  border-color: #3F3D56;
+  background-color: #fdfdfd;
+  box-shadow: 0px 4px 8px rgba(63, 61, 86, 0.2);
+  transform: scale(1.02);
+}
+
+/* Table styling: Layout and appearance for the tenants table */
+.tenants-table {
+  width: 95%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  table-layout: fixed;
+}
+
+.tenants-table th, .tenants-table td {
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Header styling with fade-in and arrow: Adds hover effect and arrows to sortable table headers */
+.tenants-table th span {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 50px;
+  transition: background-color 0.5s ease, color 0.5s ease, opacity 0.5s ease;
+}
+
+/* Add an arrow to the selected header: Show arrow next to header text when sorting */
+.tenants-table th.sorted-asc span::after,
+.tenants-table th.sorted-desc span::after {
+  content: "▼"; /* Down arrow */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  transition: transform 0.5s ease;
+}
+
+.tenants-table th.sorted-asc span::after {
+  content: "▲"; /* Up arrow for ascending */
+}
+
+/* Optional: Color change for the selected header */
+.tenants-table th.sorted-asc span,
+.tenants-table th.sorted-desc span {
+  color: black;
+}
+
+/* Header hover effect: Adds a background and rounded corners when hovering over headers */
+.tenants-table th:hover span {
+  background-color: #f1f1f1;
+  padding: 8px 25px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+/* Arrow stays within the hover area */
+.tenants-table th.sorted-asc span::after,
+.tenants-table th.sorted-desc span::after {
+  right: 1px; /* Keeps the arrow inside the hover area */
+}
+
+/* Action column styling: Styles the last column where actions are displayed */
+.tenants-table th:last-child {
+  cursor: default; /* Exclude the Actions header from sorting */
+}
+
+.tenants-table td:last-child {
+  text-align: center;
+  width: 100px;
+  font-size: 24px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+/* Hover effect for table rows: Changes background color when hovering over table rows */
+.tenants-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Dropdown button inside table: Styles the button that triggers the dropdown in the Action column */
+.dropdown-toggle {
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  padding-bottom: 10px;
+  font-weight: 600;
+}
+
+/* Hover effect for dropdown button: Enlarges the button on hover */
+.dropdown-toggle:hover {
+  transform: scale(1.3);
+}
+
+/* Dropdown menu styling: Styles for the dropdown that appears when the button is clicked */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 150px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+/* Dropdown menu item styling: Appearance of items within the dropdown menu */
+.dropdown-menu a {
+  display: block;
+  padding: 8px;
+  text-decoration: none;
+  color: #F7931E;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: left;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f1f1f1;
+  color: #F7931E;
+}

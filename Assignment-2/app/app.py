@@ -13,6 +13,10 @@ def register():
         email = request.form['email']
         password = request.form['password']
         user_type = request.form['user_type']  # Either 'Tenant' or 'Landlord'
+
+        # Check for existing users with the same username
+        if any(user['username'] == username for user in users):
+            return redirect(url_for('register_failure'))
         
         # Mock backend logic to 'save' the user
         new_user = {
@@ -22,15 +26,19 @@ def register():
             'user_type': user_type
         }
         users.append(new_user)
-        
-        # After successful registration, redirect to a new page or a success message
-        return redirect(url_for('success', username=username))
+
+        # Redirect to the success page
+        return redirect(url_for('register_success', username=username))
     
     return render_template('index.html')
 
-@app.route('/success/<username>')
-def success(username):
-    return f"Welcome {username}, you have successfully registered!"
+@app.route('/register_success/<username>')
+def register_success(username):
+    return render_template('register_success.html', username=username)
+
+@app.route('/register_failure')
+def register_failure():
+    return render_template('register_failure.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

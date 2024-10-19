@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Creation Failed</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="flex-container">
+        
+        <!-- Image section -->
+        <div class="image-section">
+            <div class="title-box">
+                <h1>Welcome to RentEase.</h1>
+                <p class="subheading">Simplifying Rentals, Elevating Experiences.</p>
+            </div>
+            <div class="image-grid-box">
+                <div class="image-grid">
+                    <img src="{{ url_for('static', filename='img/image1.png') }}" alt="House 1">
+                    <img src="{{ url_for('static', filename='img/image2.png') }}" alt="House 2">
+                    <img src="{{ url_for('static', filename='img/image3.png') }}" alt="House 3">
+                    <img src="{{ url_for('static', filename='img/image4.png') }}" alt="House 4">
+                    <img src="{{ url_for('static', filename='img/image5.png') }}" alt="House 5">
+                    <img src="{{ url_for('static', filename='img/image6.png') }}" alt="House 6">
+                    <img src="{{ url_for('static', filename='img/image7.png') }}" alt="House 7">
+                    <img src="{{ url_for('static', filename='img/image8.png') }}" alt="House 8">
+                    <img src="{{ url_for('static', filename='img/image9.png') }}" alt="House 9">
+                </div>
+            </div>
+        </div>
+
+        <!-- Failure message -->
+        <div class="container">
+            <h1>Account creation failed. Please try again.</h1>
+        </div>
+    </div>
+</body>
+</html>
