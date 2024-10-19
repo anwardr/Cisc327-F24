@@ -1,0 +1,138 @@
+/* google_signin.css */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signin-box {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+}
+
+.logo img {
+    width: 75px;
+}
+
+h1 {
+    font-size: 24px;
+    color: #202124;
+    margin-bottom: 8px;
+}
+
+.subtext {
+    font-size: 16px;
+    color: #5f6368;
+    margin-bottom: 30px;
+}
+
+.input-field {
+    margin-bottom: 20px;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.forgot-email {
+    text-align: left;
+}
+
+.forgot-email a {
+    color: #1a73e8;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forgot-email a:hover {
+    text-decoration: underline;
+}
+
+.help-text {
+    font-size: 14px;
+    color: #5f6368;
+    margin: 20px 0;
+}
+
+.help-text a {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+.help-text a:hover {
+    text-decoration: underline;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.create-account {
+    color: #1a73e8;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.create-account:hover {
+    text-decoration: underline;
+}
+
+.next-button {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.next-button:hover {
+    background-color: #155ab6;
+}
+
+.footer {
+    margin-top: 20px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #5f6368;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
