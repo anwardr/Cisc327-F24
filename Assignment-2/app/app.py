@@ -14,31 +14,52 @@ def register():
         password = request.form['password']
         user_type = request.form['user_type']  # Either 'Tenant' or 'Landlord'
 
-        # Check for existing users with the same username
-        if any(user['username'] == username for user in users):
-            return redirect(url_for('register_failure'))
-        
-        # Mock backend logic to 'save' the user
-        new_user = {
+        # Check if the email or username already exists
+        if any(user['email'] == email or user['username'] == username for user in users):
+            # Redirect to failure page with a query parameter indicating user exists
+            return redirect(url_for('register_failure', reason='user_exists'))
+
+        # Otherwise, handle successful registration
+        else:
+            # Mock backend logic to 'save' the user
+            new_user = {
             'username': username,
             'email': email,
             'password': password,
             'user_type': user_type
-        }
-        users.append(new_user)
+            }
+            users.append(new_user)
+            
+            # Print the users list to the console
+            # print(users)
 
-        # Redirect to the success page
-        return redirect(url_for('register_success', username=username))
+            return redirect(url_for('register_success', username=username))
+
+    return render_template('register/register.html')
+
+@app.route('/register_success')
+def register_success():
+    username = request.args.get('username')
+    # Convert google param to a boolean
+    google = request.args.get('google', 'False') == 'True'
     
-    return render_template('index.html')
-
-@app.route('/register_success/<username>')
-def register_success(username):
-    return render_template('register_success.html', username=username)
+    # Pass username and google flag to the template
+    return render_template('register/register_success.html', username=username, google=google)
 
 @app.route('/register_failure')
 def register_failure():
-    return render_template('register_failure.html')
+    reason = request.args.get('reason')
+    return render_template('register/register_failure.html', reason=reason)
+
+# Route for Google button redirection
+@app.route('/google_redirect')
+def google_redirect():
+    # Simulate Google login success
+    return redirect(url_for('register_success', google='True'))
+
+@app.route('/go_back')
+def go_back():
+    return redirect(url_for('register'))  # Redirects to the register page
 
 if __name__ == '__main__':
     app.run(debug=True)

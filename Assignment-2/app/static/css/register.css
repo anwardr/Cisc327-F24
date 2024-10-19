@@ -141,6 +141,22 @@ body {
     border: 1px solid #d3d3d3;
 }
 
+/* Style for the "(Coming Soon)" text */
+.coming-soon {
+    padding-top: 3px;
+    padding-left: 5px;
+    font-size: 0.8rem;
+    color: gray;
+}
+
+/* Error message styles for form validation */
+.error-message {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 5px;
+    display: block;
+}
+
 /* Remember me checkbox styles */
 .form-section .remember-me {
     display: flex;
