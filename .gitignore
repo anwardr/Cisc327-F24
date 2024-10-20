@@ -86,6 +86,7 @@ ipython_config.py
 
 # pyenv
 .python-version
+Assignment-2/rodrodrod
 
 # celery beat schedule file
 celerybeat-schedule

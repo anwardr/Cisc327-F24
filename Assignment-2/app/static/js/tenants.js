@@ -28,6 +28,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Open view-profile modal on click of button in dropdown menu
+    document.querySelectorAll('.view-profile-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            document.getElementById('modalOverlay').style.display = 'flex';
+        });
+    });
+
+    // Close view-profile modal when 'X' is clicked
+    document.getElementById('closeModal').addEventListener('click', () => {
+        document.getElementById('modalOverlay').style.display = 'none';
+    });
+    
+
     // Sorting functionality for headers (excluding "Actions" column)
     const headerSpans = document.querySelectorAll('.tenants-table th span'); // Target only the span inside headers
     let sortOrder = 1; // 1 for ascending, -1 for descending

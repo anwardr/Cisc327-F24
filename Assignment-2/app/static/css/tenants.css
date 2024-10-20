@@ -337,3 +337,43 @@ body {
   text-align: center;         /* Ensures text stays centered horizontally */
 }
 
+/* Modal background overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+/* Modal container */
+.view-profile {
+  background-color: white;
+  width: 1000px;
+  height: 450px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.profile-icon {
+  width: 375px;
+  height: 250px;
+}
+
+/* Close button inside modal */
+#closeModal {
+  color: black;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}

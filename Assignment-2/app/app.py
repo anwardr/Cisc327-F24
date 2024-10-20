@@ -173,6 +173,7 @@ def forgot_password():
 def forgot_password_success():
     return render_template('login/forgot_password_success.html')
 
+# Route for tenants page
 @app.route('/tenants')
 def tenants():
     return render_template('tenants/tenants.html')
