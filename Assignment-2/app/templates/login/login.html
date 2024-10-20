@@ -40,7 +40,7 @@
         <div class="container">
             <div class="form-section">
                 <h1>Welcome Back!</h1>
-                <form method="POST" action="{{ url_for('register') }}" onsubmit="return validateRoleSelection()">
+                <form method="POST" action="{{ url_for('login') }}" onsubmit="return validateRoleSelection()">
                     <!-- Google OAuth button -->
                     <div class="mb-3">
                         <a href="{{ url_for('choose_google_account') }}" class="btn btn-outline-primary">

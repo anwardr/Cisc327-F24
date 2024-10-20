@@ -92,10 +92,23 @@ def register_failure():
 def go_back():
     return redirect(url_for('register'))
 
-# Route for the login page
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
-    print("User List:", users,"\nGUser List:", google_users)  # Debugging: print users to the console
+    if request.method == 'POST':
+        username = request.form['username']
+        email = request.form['email']
+        password = request.form['password']
+
+        # Check if the email and password match a user in the users list
+        user = next((u for u in users if u['username'] == username and u['email'] == email and u['password'] == password), None)
+
+        if user:
+            # If the credentials match, redirect to login success page
+            return redirect(url_for('login_success', username=user['username']))
+        else:
+            # If credentials do not match, redirect to login failure page
+            return redirect(url_for('login_failure'))
+
     return render_template('login/login.html')
 
 # Route to login with a Google account

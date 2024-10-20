@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
 
     <!-- Meta tag to trigger a redirect after 3 seconds -->
-    <meta http-equiv="refresh" content="3;url={{ url_for('tenants') }}">
-
+    <meta http-equiv="refresh" content="3;url={{ url_for('login') }}">
 </head>
 <body>
     <!-- Flexbox container to hold both the image section and the form -->
@@ -43,9 +42,9 @@
         <div class="container" style="display: flex; flex-direction: column; justify-content: center;">
             <div class="form-section" style="margin-bottom: 50px;">
                 <h1 style="word-wrap: break-word; overflow-wrap: break-word; text-align: center;">
-                    Welcome back, {{ username }}!
+                    Login Failed
                 </h1>
-                <p>Your login was successful. Redirecting to Tenants Page...</p>
+                <p>Your login was unsuccessful. Redirecting to Login Page...</p>
             </div>
         </div>
     </div>
