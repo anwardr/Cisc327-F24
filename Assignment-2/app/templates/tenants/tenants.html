@@ -131,7 +131,9 @@
                             style="display: flex; flex-direction: row; justify-items:center; justify-content: space-between; padding-right: 20px; padding-left: 20px;"
                         >
                             <h2 style="color: #2E2E2E;">Jean Doe</h2>
-                            <button id="closeModal">x</button>
+                            <button id="closeModal">
+                                <img src="{{ url_for('static', filename='img/tenant_img/view-profile-close.svg') }}">
+                            </button>
                         </div>
                         <div style="display: flex; flex-direction: row; padding-top: 50px; width: 100%; height: 100%; justify-items: center;">
                             <img src="{{ url_for('static', filename='img/tenant_img/view-profile.png') }}" alt="Profile Icon" class="profile-icon" style="margin-top: 20px;">
