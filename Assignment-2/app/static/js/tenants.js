@@ -39,7 +39,34 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('closeModal').addEventListener('click', () => {
         document.getElementById('modalOverlay').style.display = 'none';
     });
-    
+
+    // Open send-message modal on click of a button in dropdown menu
+    document.querySelectorAll('.send-message-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            document.getElementById('messageOverlay').style.display = 'flex';
+        })
+    });
+
+    // Close send-message modal when 'Cancel' is clicked
+    document.getElementById('closeSendMessage').addEventListener('click', () => {
+        document.getElementById('messageOverlay').style.display = 'none';
+    });
+
+    // Close send-message modal and display success message when 'Send' is clicked 
+    document.getElementById('sendMessage').addEventListener('click', () => {
+        document.getElementById('messageOverlay').style.display = 'none';
+
+        // Show the toast message
+        const toast = document.getElementById('messageSuccessfulToast');
+        toast.style.display = 'block';
+        toast.classList.add('show');
+
+        // Hide the toast message after 3 seconds
+        setTimeout(() => {
+            toast.style.display = 'none';
+            toast.classList.remove('show');
+        }, 3000);
+    });
 
     // Sorting functionality for headers (excluding "Actions" column)
     const headerSpans = document.querySelectorAll('.tenants-table th span'); // Target only the span inside headers
