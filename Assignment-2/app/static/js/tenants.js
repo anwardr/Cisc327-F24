@@ -68,6 +68,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 3000);
     });
 
+     // Open message-history modal on click of button in dropdown menu
+     document.querySelectorAll('.message-history-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            document.getElementById('historyOverlay').style.display = 'flex';
+        });
+    });
+
+    // Close message-history modal when 'X' is clicked
+    document.getElementById('closeMessageHistory').addEventListener('click', () => {
+        document.getElementById('historyOverlay').style.display = 'none';
+    });
+
     // Sorting functionality for headers (excluding "Actions" column)
     const headerSpans = document.querySelectorAll('.tenants-table th span'); // Target only the span inside headers
     let sortOrder = 1; // 1 for ascending, -1 for descending

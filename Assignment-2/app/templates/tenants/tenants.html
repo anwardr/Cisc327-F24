@@ -86,7 +86,7 @@
                             <div class="dropdown-menu">
                                 <a class="view-profile-btn">View Profile</a>
                                 <a class="send-message-btn">Send Message</a>
-                                <a>Message History</a>
+                                <a class="message-history-btn">Message History</a>
                             </div>
                         </div>
                     </td>
@@ -102,7 +102,7 @@
                             <div class="dropdown-menu">
                                 <a class="view-profile-btn">View Profile</a>
                                 <a class="send-message-btn">Send Message</a>
-                                <a>Message History</a>
+                                <a class="message-history-btn">Message History</a>
                             </div>
                         </div>
                     </td>
@@ -118,7 +118,7 @@
                             <div class="dropdown-menu">
                                 <a class="view-profile-btn">View Profile</a>
                                 <a class="send-message-btn">Send Message</a>
-                                <a>Message History</a>
+                                <a class="message-history-btn">Message History</a>
                             </div>
                         </div>
                     </td>
@@ -195,6 +195,35 @@
                 <!-- Toast message container -->
                 <div id="messageSuccessfulToast" style="display:none; position: fixed; top: 20px; right: 20px; background-color: #28a745; color: white; padding: 15px; border-radius: 8px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); z-index: 100;">
                     Message sent successfully!
+                </div>
+
+                <!-- Message History -->
+                <div class="modal-overlay" id="historyOverlay" style="display: none;">
+                    <div class="message-history">
+                        <div
+                            style="display: flex; flex-direction: column; justify-items:center; justify-content: space-between; padding-right: 40px; padding-left: 40px; gap: 20px;"
+                        >
+                            <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                                <h2>Message History with Jean Doe</h2>
+                                <button id="closeMessageHistory" style="margin-right: -20px;">
+                                    <img src="{{ url_for('static', filename='img/tenant_img/view-profile-close.svg') }}">
+                                </button>
+                            </div>
+                            <div style="width: 100%; display: flex; flex-direction: column; gap: 10px;">
+                                <h4 style="color: #F9A826; text-align: end;">user_00 - 08/31/24 - 8PM</h4>
+                                <div style="display: flex; justify-content: flex-end; width: 260px; border: 1px solid; border-color: #D2D2D2; padding: 15px; border-radius: 6px; font-size: 16px; margin-left: auto;">
+                                    Hi Jean, just wanted to let you know your rent payment is due next week. Cheers, user_00
+                                </div>
+                            </div>
+                            
+                            <div style="width: 100%; display: flex; flex-direction: column; justify-content: start; gap: 10px;">
+                                <h4 style="color: #F9A826;">Jean - 09/01/24 - 7AM</h4>
+                                <div style="display: flex; width: 260px; border: 1px solid; border-color: #D2D2D2; padding: 15px; border-radius: 6px; font-size: 16px;">
+                                    Hi user_00! Thanks for letting me know. I am sending you the rent payment right now.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </tbody>
         </table>        
