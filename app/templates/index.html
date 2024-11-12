@@ -3,16 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Input Form</title>
+    <title>Medicine Search</title>
+    <style>
+        body {
+            font-family: 'Helvetica', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #e0f7e0; /* Light green background */
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4caf50; /* Light green color */
+            color: white;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #388e3c; /* Darker green for hover */
+        }
+        .medicine-details {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            margin-top: 30px;
+        }
+        .medicine-image {
+            width: 500px; /* Make the image larger */
+            height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .medicine-info {
+            max-width: 500px;
+            margin-left: 20px;
+        }
+        .medicine-info h2 {
+            color: #2c3e50;
+            font-size: 28px;
+        }
+        .medicine-info p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        .price {
+            font-size: 22px;
+            color: #27ae60;
+            margin: 10px 0;
+        }
+        .add-to-cart {
+            padding: 10px 20px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .add-to-cart:hover {
+            background-color: #c0392b;
+        }
+        .cart-message {
+            margin-top: 10px;
+            color: #2ecc71;
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Enter something:</h1>
-    <form method="POST">
-        <input type="text" name="user_input" required>
-        <button type="submit">Submit</button>
-    </form>
-    {% if user_input %}
-        <h2>You entered: {{ user_input }}</h2>
+    <h1>Medicine Search</h1>
+    <div class="search-container">
+        <form method="POST">
+            <input type="text" name="medicine_name" placeholder="Search for medicine here">
+            <input type="submit" value="Search">
+        </form>
+    </div>
+    {% if medicine %}
+    <div class="medicine-details">
+        <div>
+            <img src="{{ medicine.image }}" alt="{{ medicine.name }}" class="medicine-image">
+        </div>
+        <div class="medicine-info">
+            <h2>{{ medicine.name }}</h2>
+            <p>{{ medicine.description }}</p>
+            <p class="price">Price: {{ medicine.price }}</p>
+            <button class="add-to-cart" onclick="showCartMessage()">Add to Cart</button>
+            <p class="cart-message" id="cartMessage" style="display:none;">Added to cart!</p>
+        </div>
+    </div>
     {% endif %}
+    <script>
+        function showCartMessage() {
+            document.getElementById('cartMessage').style.display = 'block';
+        }
+    </script>
 </body>
 </html>
